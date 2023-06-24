@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const router = require("./routes");
-const app = express();
+const index = express();
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const path = require("path");
@@ -14,28 +14,28 @@ const graphql = require("./routes/graphql");
 
 const { HTTP_PORT } = process.env;
 
-app.use(express.json());
-app.use(morgan("dev"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
-app.use(cors());
-app.use(router);
-app.set("view engine", "ejs");
+index.use(express.json());
+index.use(morgan("dev"));
+index.use(bodyParser.urlencoded({ extended: false }));
+index.use(express.urlencoded({ extended: true }));
+index.use(methodOverride("_method"));
+index.use(cors());
+index.use(router);
+index.set("view engine", "ejs");
 
-app.use("/graphql", graphql);
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "client")));
+index.use("/graphql", graphql);
+index.use(express.json());
+index.use(express.static(path.join(__dirname, "client")));
 
 //documentation
-app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.get("/pdf", (req, res) => {
+index.get("/pdf", (req, res) => {
   return res.render("report");
 });
 
 // 404 handler
-app.use((req, res, next) => {
+index.use((req, res, next) => {
   return res.status(404).json({
     status: false,
     message: "Are you lost?",
@@ -43,7 +43,7 @@ app.use((req, res, next) => {
 });
 
 // 500 handler
-app.use((err, req, res, next) => {
+index.use((err, req, res, next) => {
   if (err.code == "LIMIT_FILE_SIZE" || err.message == "file too large") {
     return res.status(500).json({
       status: false,
@@ -57,7 +57,7 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(HTTP_PORT, () => console.log("listening on port", HTTP_PORT));
+index.listen(HTTP_PORT, () => console.log("listening on port", HTTP_PORT));
 
 //User
 //npx sequelize-cli model:generate --name User --attributes username:string,email:string,password:string,thumbnail:string,role:string,user_type:string,is_verified:integer
