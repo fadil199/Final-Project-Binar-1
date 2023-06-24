@@ -6,10 +6,9 @@ on:
   push:
     branches-ignore:
 
-custom:
-  bundle:
-    ignorePackages:
-      - pg-native
+package:
+  exclude:
+    - node_modules/pg
       
 jobs:
   Deploy-Preview:
