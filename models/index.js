@@ -16,7 +16,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     host:config.host,
     dialect:'postgres',
-    dialectModule: pg,
+    dialectModule: require('pg'),
     dialectOptions: {
       ssl: {
         require: true,
