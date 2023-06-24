@@ -1,6 +1,11 @@
 require("dotenv").config();
-const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE, POSTGRES_HOST, POSTGRES_DIALECT, POSTGRES_PORT } =
-  process.env;
+const { 
+  POSTGRES_USER, 
+  POSTGRES_PASSWORD, 
+  POSTGRES_DATABASE, 
+  POSTGRES_HOST, 
+  POSTGRES_DIALECT, 
+  POSTGRES_PORT } = process.env;
 
 module.exports = {
   development: {

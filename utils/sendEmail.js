@@ -31,7 +31,7 @@ module.exports = {
           service: "gmail",
           auth: {
             type: "OAuth2",
-            user: "terbangtinggiapp@gmail.com",
+            user: "achmadfadilla197@gmail.com",
             clientId: GOOGLE_CLIENT_ID3,
             clientSecret: GOOGLE_CLIENT_SECRET3,
             refreshToken: GOOGLE_REFRESH_TOKEN3,
