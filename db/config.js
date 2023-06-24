@@ -14,13 +14,7 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: POSTGRES_DIALECT,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    dialect: 'postgres',
   },
   test: {
     username: POSTGRES_USER,
@@ -28,13 +22,7 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: POSTGRES_DIALECT,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    dialect: 'postgres',
   },
   production: {
     username: POSTGRES_USER,
@@ -42,12 +30,6 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: POSTGRES_DIALECT,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    dialect: 'postgres',
   },
 };
