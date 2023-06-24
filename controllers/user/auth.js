@@ -9,7 +9,7 @@ const userTypes = require("../../utils/userType");
 const email1 = require("../../utils/sendEmail");
 const webpush = require("web-push");
 const validator = require("validator");
-const { JWT_SECRET_KEY, API_HOST, FE_HOST } = process.env;
+const { JWT_SECRET_KEY, BE_HOST, FE_HOST } = process.env;
 
 const subscriptions = require("../../subscriptions.json");
 //tes
@@ -82,7 +82,7 @@ module.exports = {
         is_read: false,
       });
 
-      const apiHost = API_HOST;
+      const apiHost = BE_HOST;
       const payload1 = { id: user.id };
       const token = jwt.sign(payload1, JWT_SECRET_KEY);
       const link = `${apiHost}/auth/verif?token=${token}`;
