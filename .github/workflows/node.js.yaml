@@ -5,10 +5,6 @@ env:
 on:
   push:
     branches-ignore:
-
-package:
-  exclude:
-    - node_modules/pg
       
 jobs:
   Deploy-Preview:
@@ -23,3 +19,7 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
+package:
+  exclude:
+    - node_modules/pg
