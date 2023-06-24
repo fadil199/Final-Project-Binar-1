@@ -4,8 +4,7 @@ module.exports = {
   updateProfile: async (req, res, next) => {
     try {
       const {
-        first_name,
-        last_name,
+        fullName,
         gender,
         country,
         province,
@@ -24,7 +23,7 @@ module.exports = {
 
       const detail_user = await DetailUser.update(
         {
-          fullName: [first_name, last_name].join(" "),
+          fullName,
           gender,
           country,
           province,
