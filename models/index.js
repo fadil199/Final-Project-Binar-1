@@ -7,6 +7,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../db/config.js')[env];
 const db = {};
+const pg = require('pg');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -15,6 +16,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     host:config.host,
     dialect:'postgres',
+    dialectModule: pg,
     dialectOptions: {
       ssl: {
         require: true,
