@@ -1,4 +1,5 @@
 require("dotenv").config();
+const pg = require('pg');
 const { 
   POSTGRES_USER, 
   POSTGRES_PASSWORD, 
@@ -14,7 +15,7 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: 'postgres',
+    dialect: pg,
     dialectOptions: {
       ssl: {
         require: true,
@@ -28,7 +29,7 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: 'postgres',
+    dialect: pg,
     dialectOptions: {
       ssl: {
         require: true,
@@ -42,7 +43,7 @@ module.exports = {
     database: POSTGRES_DATABASE,
     host: POSTGRES_HOST,
     port: POSTGRES_PORT,
-    dialect: 'postgres',
+    dialect: pg,
     dialectOptions: {
       ssl: {
         require: true,
