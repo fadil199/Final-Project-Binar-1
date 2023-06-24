@@ -1,5 +1,5 @@
 const auth = require("./auth");
-const webpush = require("./webpush");
+// const webpush = require("./webpush");
 const airport = require("./airport");
 const passenger = require("./passenger");
 const scheduleFlight = require("./scheduleFlight");
@@ -10,7 +10,6 @@ const userNotification = require("./notification");
 module.exports = {
   user,
   auth,
-  webpush,
   airport,
   passenger,
   transaction,

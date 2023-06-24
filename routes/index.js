@@ -9,7 +9,6 @@ const flight = require("./flight");
 const notification = require("./notification");
 const transaction = require("./transaction");
 const schedule = require("./scheduleFlight");
-const webpush = require("./webpush");
 const ticket = require("./ticket");
 
 // router.get("/", (req, res) => {
@@ -39,7 +38,6 @@ router.use("/flight", flight);
 router.use("/notification", notification);
 router.use("/schedule", schedule);
 router.use("/transaction", transaction);
-router.use("/webpush", webpush);
 router.use("/ticket", ticket);
 
 module.exports = router;
