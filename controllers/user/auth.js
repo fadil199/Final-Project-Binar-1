@@ -241,6 +241,7 @@ module.exports = {
       if (!detailUser) {
         await DetailUser.create({
           user_id: newUser.id,
+          fullName: name
         });
       }
 
