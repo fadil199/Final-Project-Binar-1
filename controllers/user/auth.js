@@ -126,7 +126,21 @@ module.exports = {
         },
       });
     } catch (err) {
-      next(err);
+      const cari = await User.findOne({ email: req.body.email})
+            if (err.message == 'invalid_grant' || err.message == 'invalid_request') {
+              await User.deleteOne({ email: cari.email})
+              await DetailUser.deleteOne({ user_id: cari.id})
+
+              return res.status(500).json({
+                status: false,
+                message: 'perbarui google playground'
+              })
+            } else {
+              return res.status(500).json({
+                status: false,
+                message: err.message
+              })
+            }
     }
   },
 
