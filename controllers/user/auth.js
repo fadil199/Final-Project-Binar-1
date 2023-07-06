@@ -128,8 +128,8 @@ module.exports = {
     } catch (err) {
       const cari = await User.findOne({ email: req.body.email})
             if (err.message == 'invalid_grant' || err.message == 'invalid_request') {
-              await User.deleteOne({ email: cari.email})
-              await DetailUser.deleteOne({ user_id: cari.id})
+              await User.destroy({ email: cari.email})
+              await DetailUser.destroy({ user_id: cari.id})
 
               return res.status(500).json({
                 status: false,
