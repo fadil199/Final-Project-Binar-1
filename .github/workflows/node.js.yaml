@@ -15,8 +15,6 @@ jobs:
         run: npm install pg -g
       - name: Install puppeteer
         run: npm install puppeteer -g
-      - name: Install puppeteer.js
-        run: node puppeteer/install.js
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
