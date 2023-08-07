@@ -11,6 +11,7 @@ const imagekit = require("../../utils/imagekit");
 const qr = require("qr-image");
 const puppeteer = require("puppeteer");
 const email1 = require("../../utils/sendEmail");
+const chromium = require("chrome-aws-lambda")
 
 const { CHROMIUM_PATH } = process.env;
 
@@ -302,9 +303,12 @@ module.exports = {
     });
 
     try {
-      const browser = await puppeteer.launch({
-        executablePath: CHROMIUM_PATH,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      const browser = await chromium.puppeteer.launch({
+        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: true,
+        ignoreHTTPSErrors: true,
       });
 
       // Create a new page
