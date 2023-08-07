@@ -12,7 +12,7 @@ const YAML = require("yamljs");
 // const swaggerDocument = YAML.load("./documentationSwagger.yaml");
 const graphql = require("./routes/graphql");
 
-const { HTTP_PORT } = process.env;
+const { HTTP_PORT, JWT_SECRET_KEY } = process.env;
 
 index.use(express.json());
 index.use(morgan("dev"));
@@ -56,6 +56,7 @@ index.use((err, req, res, next) => {
     });
   }
 });
+
 
 index.listen(HTTP_PORT, () => console.log("listening on port", HTTP_PORT));
 
