@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install pg
         run: npm install pg -g
+      - name: Uninstall puppeteer
+        run: npm uninstall puppeteer
       - name: Install puppeteer
         run: npm install puppeteer@16.2.0 --save-dev
       - name: Install Vercel CLI
