@@ -12,6 +12,8 @@ const qr = require("qr-image");
 const puppeteer = require("puppeteer");
 const email1 = require("../../utils/sendEmail");
 
+const { CHROMIUM_PATH } = process.env;
+
 module.exports = {
   createTransaction: async (req, res, next) => {
     return new Promise(async (resolve, reject) => {
@@ -301,6 +303,7 @@ module.exports = {
 
     try {
       const browser = await puppeteer.launch({
+        executablePath: CHROMIUM_PATH,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       });
 
