@@ -60,6 +60,12 @@ index.use((err, req, res, next) => {
 
 index.listen(HTTP_PORT, () => console.log("listening on port", HTTP_PORT));
 
+//npm init
+
+//sequelize init
+ 
+//sequelize db:create
+
 //User
 //npx sequelize-cli model:generate --name User --attributes username:string,email:string,password:string,thumbnail:string,role:string,user_type:string,is_verified:integer
 
