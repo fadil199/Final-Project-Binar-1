@@ -27,12 +27,15 @@ index.use("/graphql", graphql);
 index.use(express.json());
 index.use(express.static(path.join(__dirname, "client")));
 
+const CSS_URL =
+  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+
 const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 
 const swaggerDocument = YAML.load(jsonPath);
 
 //documentation
-index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(specs, {customCssUrl: CSS_URL}, swaggerDocument));
 
 index.get("/pdf", (req, res) => {
   return res.render("report");
