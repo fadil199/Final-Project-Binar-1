@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install Swagger Js Docs
+        run: npm i swagger-jsdoc
       - name: Install Swagger Express
         run: npm i swagger-ui-express
       - name: Install pg

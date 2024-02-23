@@ -10,7 +10,7 @@ const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const graphql = require("./routes/graphql");
-const fs = require("fs");
+const swaggerJsDoc = require("swagger-jsdoc");
 
 const { HTTP_PORT, JWT_SECRET_KEY } = process.env;
 
