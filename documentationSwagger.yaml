@@ -11,19 +11,14 @@ info:
     ---------------------------------------------------------------------------
 
     Backend Team 
-    1. Achmad Fadilla - Universitas Nusa Mandiri
-    2. John Tri Putra Sihombing - Universitas Sumatera Utara
-    3. Muhammad Umar Mansyur - Universitas Madura
+    Achmad Fadilla - Universitas Nusa Mandiri
+
   contact:
     email: terbangtinggiapp@gmail.com
     name: Developer
 servers:
   - description: ""
-    url: "https://terbangtinggi-api-staging.km3ggwp.com/"
-  - description: ""
-    url: "https://terbangtinggi-api.km3ggwp.com/"
-  - description: ""
-    url: "http://localhost:3000"
+    url: "https://final-project-binar-1.vercel.app/"
 paths:
   /auth/register:
     post:
