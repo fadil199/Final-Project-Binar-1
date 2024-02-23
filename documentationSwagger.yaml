@@ -3,14 +3,7 @@ openapi: "3.0.0",
 info: {
   title: "Terbang Tinggi App",
   version: "1.0",
-  description:
-    "API Terbang Tinggi App For Final Project Backend Javascript Binar Academy.
-    We Also Provide Documentation On Postman :
-    https://documenter.getpostman.com/view/23103147/2s8YsxurAy
-    ---------------------------------------------------------------------------
-
-    Backend Team
-    Achmad Fadilla - Universitas Nusa Mandiri",
+  description: "test",
   contact: {
     email: "terbangtinggiapp@gmail.com",
     name: "Developer",
