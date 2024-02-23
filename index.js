@@ -34,7 +34,7 @@ const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 const swaggerDocument = YAML.load(jsonPath);
 
 //documentation
-index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+index.use("/api/docs", express.static('node_modules/swagger-ui-dist/', {index: false}), swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 index.get("/pdf", (req, res) => {
   return res.render("report");
