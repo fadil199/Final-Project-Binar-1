@@ -10,7 +10,6 @@ const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const graphql = require("./routes/graphql");
-const swaggerJsDoc = require("swagger-jsdoc");
 
 const { HTTP_PORT, JWT_SECRET_KEY } = process.env;
 
@@ -34,10 +33,8 @@ const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 
 const swaggerDocument = YAML.load(jsonPath);
 
-const specs = swaggerJsDoc(swaggerDocument);
-
 //documentation
-index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, {customCssUrl: CSS_URL}));
+index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 index.get("/pdf", (req, res) => {
   return res.render("report");
