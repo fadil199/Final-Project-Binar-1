@@ -9,8 +9,8 @@ const path = require("path");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-const swaggerDocument = YAML.load("./documentationSwagger.yaml");
 const graphql = require("./routes/graphql");
+const fs = require("fs");
 
 const { HTTP_PORT, JWT_SECRET_KEY } = process.env;
 
@@ -26,6 +26,10 @@ index.set("view engine", "ejs");
 index.use("/graphql", graphql);
 index.use(express.json());
 index.use(express.static(path.join(__dirname, "client")));
+
+const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
+
+const swaggerDocument = YAML.load(jsonPath);
 
 //documentation
 index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
