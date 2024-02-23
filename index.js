@@ -34,6 +34,8 @@ const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 
 const swaggerDocument = YAML.load(jsonPath);
 
+const specs = swaggerJsDoc(options);
+
 //documentation
 index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(specs, {customCssUrl: CSS_URL}, swaggerDocument));
 
