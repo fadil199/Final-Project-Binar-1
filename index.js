@@ -37,7 +37,7 @@ const swaggerDocument = YAML.load(jsonPath);
 const specs = swaggerJsDoc(swaggerDocument);
 
 //documentation
-index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(specs, {customCssUrl: CSS_URL}, swaggerDocument));
+index.use("/api/docs", swaggerUi.serve, swaggerUi.setup(specs, {customCssUrl: CSS_URL}));
 
 index.get("/pdf", (req, res) => {
   return res.render("report");
