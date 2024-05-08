@@ -8,7 +8,11 @@
 
 ---
 
+# Docs
+https://final-project-binar-1.vercel.app/api/docs
+
 ## Develop The Repository
+
 
 ## How to make a PR & merge
 
