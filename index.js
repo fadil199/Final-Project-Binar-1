@@ -27,7 +27,7 @@ index.use(express.json());
 index.use(express.static(path.join(__dirname, "client")));
 
 const CSS_URL =
-  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.6.2/swagger-ui.min.css";
 
 const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 
