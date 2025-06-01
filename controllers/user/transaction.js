@@ -304,7 +304,7 @@ module.exports = {
     try {
       const browser = await puppeteer.launch({
         executablePath: CHROMIUM_PATH,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions"],
       });
 
       // Create a new page
