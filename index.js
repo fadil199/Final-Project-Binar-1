@@ -34,7 +34,7 @@ const jsonPath = path.join(process.cwd(), 'documentationSwagger.yaml');
 const swaggerDocument = YAML.load(jsonPath);
 
 //documentation
-index.use("/api/docs", express.static('node_modules/swagger-ui-dist/', {index: false}), swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+index.use("/api/docs", express.static('node_modules/swagger-ui-dist/', {index: false}), swaggerUi.serve, swaggerUi.setup(swaggerDocument, {customCssUrl: CSS_URL}));
 
 index.get("/pdf", (req, res) => {
   return res.render("report");
@@ -95,3 +95,5 @@ index.listen(HTTP_PORT, () => console.log("listening on port", HTTP_PORT));
 
 //ticket
 //npx sequelize-cli model:generate --name Ticket --attributes detail_transaction_id:integer,ticket_code:string
+
+//test
